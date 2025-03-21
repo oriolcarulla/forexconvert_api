@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -55,6 +56,9 @@ public class RateController {
         return ResponseEntity.badRequest().body("No exchange rate found for " + from + " to " + to);
     }
 
-
+@GetMapping("/rates")
+    public List<Rate> getRates(){
+        return rateRepository.findAll();
+    }
 
 }
