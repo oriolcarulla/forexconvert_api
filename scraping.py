@@ -41,9 +41,7 @@ if __name__ == "__main__":
             cursor.execute("INSERT INTO rates (currency, rate) VALUES (?, ?)", (currency, 0))
 
     # Actualizar las tasas de cambio
-    for currency in currencies:
-        rate = get_rate(currency)  # Si es None, devolverá 0
-        cursor.execute("UPDATE rates SET rate = ? WHERE currency = ?", (rate, currency))
-
-    conn.commit()
-    conn.close()
+    while True:
+        for currency in currencies:
+            rate = get_rate(currency)  # Si es None, devolverá 0
+            cursor.execute("UPDATE rates SET rate = ? WHERE currency = ?", (rate, currency))

@@ -89,6 +89,7 @@ GET /rates?from=gbp&to=eur&amount=10
    ```
 3. Ejecutar la aplicación:
    ```sh
+   python scraping.py #es un bucle que va actualizando la BDD
    mvn spring-boot:run
    ```
 
