@@ -13,6 +13,7 @@ ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio en
 
 | Código | Moneda           |
 | ------ | ---------------- |
+| USD    | Dólar estadounidense |
 | EUR    | Euro             |
 | GBP    | Libra esterlina  |
 | JPY    | Yen japonés      |
