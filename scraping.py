@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
+import time
 
 def get_rate(currency):
     url = f"https://es.investing.com/currencies/usd-{currency}"
@@ -45,3 +46,5 @@ if __name__ == "__main__":
         for currency in currencies:
             rate = get_rate(currency)  # Si es None, devolverá 0
             cursor.execute("UPDATE rates SET rate = ? WHERE currency = ?", (rate, currency))
+            conn.commit()
+        time.sleep(60)  # Esperar 1 minuto
