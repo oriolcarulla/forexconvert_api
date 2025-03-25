@@ -103,13 +103,14 @@ Debera tener el maven instalado -> [Maven]("https://maven.apache.org/download.cg
    En caso de estar en Linux 
    ```sh
    source venv/bin/activate
-   python scraping.py #es un bucle que va actualizando la BDD
+   python3 scraping.py #es un bucle que va actualizando la BDD
    mvn spring-boot:run
    ```
 
    En caso de estar en Windows
    ```sh
    .\venv_windows\Scripts\activate
+   python scraping.py o py scraping.py
    mvn spring-boot:run
    ```
 
