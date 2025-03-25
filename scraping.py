@@ -47,4 +47,5 @@ if __name__ == "__main__":
             rate = get_rate(currency)  # Si es None, devolverá 0
             cursor.execute("UPDATE rates SET rate = ? WHERE currency = ?", (rate, currency))
             conn.commit()
+        print("Tasas actualizadas")
         time.sleep(60)  # Esperar 1 minuto
