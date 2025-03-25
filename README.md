@@ -57,13 +57,13 @@ GET /rates
 ### ✅ Convertir una cantidad entre monedas
 
 ```http
-GET /rates?from={moneda_origen}&to={moneda_destino}&amount={cantidad}
+GET /rate?from={moneda_origen}&to={moneda_destino}&amount={cantidad}
 ```
 
 **Ejemplo:** Convertir **10 GBP** a **EUR**
 
 ```http
-GET /rates?from=gbp&to=eur&amount=10
+GET /rate?from=gbp&to=eur&amount=10
 ```
 
 **Ejemplo de respuesta:**
