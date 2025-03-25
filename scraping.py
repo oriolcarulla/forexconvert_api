@@ -33,13 +33,27 @@ if __name__ == "__main__":
     conn = sqlite3.connect("forexconvert.db")
     cursor = conn.cursor()
 
+    # Crear tabla si no existe
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS rates (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            usd TEXT NOT NULL,
+            currency TEXT NOT NULL,
+            rate REAL NOT NULL
+        )
+    """)
+    cursor.execute("select * from rates where currency = 'usd'")
+    if not cursor.fetchall():
+        cursor.execute("insert into rates (usd, currency, rate) values ('usd', 'usd', 1)")
+    conn.commit()
+
     currencies = ["eur", "gbp", "jpy", "ars", "clp", "chf", "cad", "cny", "mxn", "cop"]
     
     # Insertar las monedas si no existen
     for currency in currencies:
         cursor.execute("SELECT * FROM rates WHERE currency = ?", (currency,))
         if not cursor.fetchall():
-            cursor.execute("INSERT INTO rates (currency, rate) VALUES (?, ?)", (currency, 0))
+            cursor.execute("INSERT INTO rates (usd, currency, rate) VALUES (?, ?, ?)", ("usd", currency, 0))
 
     # Actualizar las tasas de cambio
     while True:

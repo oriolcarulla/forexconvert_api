@@ -6,7 +6,7 @@ ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio en
 
 - ✔️ Obtén tasas de conversión entre las diversas mas conocidas.
 - ✔️ Soporte para cálculo de conversiones directas e indirectas.
-- ✔️ Desarrollado con **Spring Boot** y **Java**.
+- ✔️ Desarrollado con **Python 3, Spring Boot** y **Java 22**.
 - ✔️ Redondeo de valores de conversión con precisión de 4 decimales.
 
 ## 🔄 Monedas disponibles
@@ -28,6 +28,8 @@ ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio en
 ## 💪 Uso
 
 ### ⤴️ Obtener todas las tasas de cambio
+
+Todas las divisas se cambian a Dolar y luego esta a otra moneda se hace asi por optimización de la base de datos.
 
 ```http
 GET /rates
@@ -78,6 +80,8 @@ GET /rates?from=gbp&to=eur&amount=10
 
 ## 🛠️ Instalación y ejecución
 
+Debera tener el maven instalado -> [Maven]("https://maven.apache.org/download.cgi")
+
 1. Clonar el repositorio:
    ```sh
    git clone https://github.com/oriolcarulla/forexconvert-api.git
@@ -87,9 +91,25 @@ GET /rates?from=gbp&to=eur&amount=10
    ```sh
    mvn clean install
    ```
+
+   Acceder a target/classes/application.properties
+   Y cambiar: `spring.datasource.url=jdbc:sqlite:forexconvert.db`
+
+   por: `spring.datasource.url=jdbc:sqlite:../forexconvert.db`
+
+   Esto es necesario ya que sino no habra conexión con la base de datos.
 3. Ejecutar la aplicación:
+   
+   En caso de estar en Linux 
    ```sh
+   source venv/bin/activate
    python scraping.py #es un bucle que va actualizando la BDD
+   mvn spring-boot:run
+   ```
+
+   En caso de estar en Windows
+   ```sh
+   .\venv_windows\Scripts\activate
    mvn spring-boot:run
    ```
 
