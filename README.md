@@ -91,26 +91,23 @@ Debera tener el maven instalado -> [Maven]("https://maven.apache.org/download.cg
    ```sh
    mvn clean install
    ```
-
-   Acceder a target/classes/application.properties
-   Y cambiar: `spring.datasource.url=jdbc:sqlite:forexconvert.db`
-
-   por: `spring.datasource.url=jdbc:sqlite:../forexconvert.db`
-
-   Esto es necesario ya que sino no habra conexión con la base de datos.
 3. Ejecutar la aplicación:
    
    En caso de estar en Linux 
    ```sh
    source venv/bin/activate
    python3 scraping.py #es un bucle que va actualizando la BDD
+
+   Desde la raiz del proyecto: 
    mvn spring-boot:run
    ```
 
    En caso de estar en Windows
    ```sh
    .\venv_windows\Scripts\activate
-   python scraping.py o py scraping.py
+   python scraping.py o py scraping.py #es un bucle que va actualizando la BDD
+
+   Desde la raiz del proyecto: 
    mvn spring-boot:run
    ```
 
@@ -120,6 +117,7 @@ El puerto por defecto es **8080**, pero puedes cambiarlo en el archivo `applicat
 
 ```properties
 server.port=5000
+server.addresses=0.0.0.0 #para que sea visible por todo el mundo
 ```
 
 ## 💎 Contribuir
