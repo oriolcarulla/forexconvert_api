@@ -1,7 +1,6 @@
 # 🌍 ForexConvert API
 
-ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio entre diferentes monedas y calcular conversiones en tiempo real vinculada a las tasas de conversion de [Investing.com](https://www.investing.com/). 
-
+ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio entre diferentes monedas y calcular conversiones en tiempo real vinculada a las tasas de conversion de [Investing.com](https://www.investing.com/). Es usada en el repositorio [Forex-Convert](https://www.pypi.org/project/forex-convert) en python.
 ## ✨ Características
 
 - ✔️ Obtén tasas de conversión entre las diversas mas conocidas.
@@ -27,30 +26,31 @@ ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio en
 
 ## 💪 Uso
 
+### Libre uso en `oriolserver.ddns.net:8080`
+
 ### ⤴️ Obtener todas las tasas de cambio
 
-Todas las divisas se cambian a Dolar y luego esta a otra moneda se hace asi por optimización de la base de datos.
-
 ```http
-GET /rates
+GET /rate/{moneda}
 ```
 
-**Ejemplo de respuesta:**
+**Ejemplo de uso:**
+
+```python
+GET /rate/eur
+```
 
 ```json
 [
     {
-        "id": 1,
-        "usd": "usd",
-        "currency": "eur",
-        "rate": 0.9229
+        "currency": "usd",
+        "rate": 1.0814
     },
     {
-        "id": 2,
-        "usd": "usd",
         "currency": "gbp",
-        "rate": 0.7728
-    }
+        "rate": 0.8354
+    },
+    ...
 ]
 ```
 
@@ -80,7 +80,7 @@ GET /rate?from=gbp&to=eur&amount=10
 
 ## 🛠️ Instalación y ejecución
 
-Debera tener el maven instalado -> [Maven]("https://maven.apache.org/download.cgi")
+Tienes que tener el [Maven]("https://maven.apache.org/download.cgi") instalado.
 
 1. Clonar el repositorio:
    ```sh
