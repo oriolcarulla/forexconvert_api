@@ -1,6 +1,19 @@
 # 🌍 ForexConvert API
 
+![Java](https://img.shields.io/badge/Java-22-blue)
+![Python](https://img.shields.io/badge/Python-3.x-green)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow)
+
 ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio entre diferentes monedas y calcular conversiones en tiempo real vinculada a las tasas de conversion de [Investing.com](https://www.investing.com/). Es usada en el repositorio [Forex-Convert](https://www.pypi.org/project/forex-convert) en python.
+## 📚 Índice
+- [Características](#-características)
+- [Monedas disponibles](#-monedas-disponibles)
+- [Uso](#-uso)
+- [Instalación y ejecución](#️-instalación-y-ejecución)
+- [Configuración del puerto](#️-configuración-del-puerto)
+- [Contribuir](#-contribuir)
+- [Licencia](#-licencia)
+
 ## ✨ Características
 
 - ✔️ Obtén tasas de conversión entre las diversas mas conocidas.
@@ -55,6 +68,7 @@ GET /rate/eur
 ```
 
 ### ✅ Convertir una cantidad entre monedas
+
 
 ```http
 GET /rate?from={moneda_origen}&to={moneda_destino}&amount={cantidad}
@@ -113,7 +127,7 @@ Tienes que tener el [Maven]("https://maven.apache.org/download.cgi") instalado.
 
 ## 🛡️ Configuración del puerto
 
-El puerto por defecto es **8080**, pero puedes cambiarlo en el archivo `application.properties`:
+El puerto por defecto es **8080**, pero puedes cambiarlo en el archivo [`application.properties`](src/main/resources/application.properties):
 
 ```properties
 server.port=5000
