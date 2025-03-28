@@ -16,6 +16,7 @@ public class Rate {
     @Column(name = "rate", precision = 10, scale = 4)
     private BigDecimal rate;
 
+
     public Long getId() {
         return id;
     }
