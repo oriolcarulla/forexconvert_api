@@ -43,13 +43,13 @@ ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio en
 
 ### ⤴️ Obtener todas las tasas de cambio
 
-```http
+```js
 GET /rate/{moneda}
 ```
 
 **Ejemplo de uso:**
 
-```python
+```js
 GET /rate/eur
 ```
 
@@ -70,17 +70,16 @@ GET /rate/eur
 ### ✅ Convertir una cantidad entre monedas
 
 
-```http
+```js
 GET /rate?from={moneda_origen}&to={moneda_destino}&amount={cantidad}
 ```
 
-**Ejemplo:** Convertir **10 GBP** a **EUR**
+**Ejemplo de uso:**
 
-```http
+Convertir **10 GBP** a **EUR**
+```js
 GET /rate?from=gbp&to=eur&amount=10
 ```
-
-**Ejemplo de respuesta:**
 
 ```json
 {
@@ -90,6 +89,29 @@ GET /rate?from=gbp&to=eur&amount=10
     "rate": 1.1949,
     "result": 11.949
 }
+```
+
+### 💱 Obtener todas las monedas disponibles
+```js
+GET /currency
+```
+
+**Ejemplo de uso**
+
+```json
+[
+    "usd",
+    "eur",
+    "gbp",
+    "jpy",
+    "ars",
+    "clp",
+    "chf",
+    "cad",
+    "cny",
+    "mxn",
+    "cop"
+]
 ```
 
 ## 🛠️ Instalación y ejecución
