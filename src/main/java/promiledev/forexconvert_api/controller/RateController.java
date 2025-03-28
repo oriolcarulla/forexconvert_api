@@ -46,7 +46,8 @@ public class RateController {
         Optional<Rate> usdToToOpt = rateRepository.findByUsdAndCurrency("usd", to);
 
         if (fromToUsdOpt.isPresent() && usdToToOpt.isPresent()){
-            BigDecimal fromToUsd = BigDecimal.ONE.divide(fromToUsdOpt.get().getRate(), 4, RoundingMode.HALF_UP);
+            // En la escala pone 3 pero redondea a 4
+            BigDecimal fromToUsd = BigDecimal.ONE.divide(fromToUsdOpt.get().getRate(), 3, RoundingMode.HALF_UP);
             BigDecimal usdToTo = usdToToOpt.get().getRate();
             BigDecimal rate = fromToUsd.multiply(usdToTo);
             BigDecimal result = amount.multiply(rate);
