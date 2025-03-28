@@ -15,4 +15,7 @@ public interface RateRepository extends JpaRepository<Rate, Long> {
     Optional<Rate> findByCurrency(String currency);
     @Query("SELECT new promiledev.forexconvert_api.dto.CurrencyRateDTO(r.currency, r.rate) FROM Rate r WHERE r.currency <> :currency")
     List<CurrencyRateDTO> getCurrencyList(@Param("currency") String currency);
+    @Query("SELECT r.currency FROM Rate as r")
+    List<String> getCurrencyList();
+
 }
