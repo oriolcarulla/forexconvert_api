@@ -3,6 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-22-blue)
 ![Python](https://img.shields.io/badge/Python-3.x-green)
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow)
+![SpringBoot](https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=Spring&logoColor=white)
 
 ForexConvert API es una API sencilla y eficiente para obtener tasas de cambio entre diferentes monedas y calcular conversiones en tiempo real vinculada a las tasas de conversion de [Investing.com](https://www.investing.com/). Es usada en el repositorio [Forex-Convert](https://www.pypi.org/project/forex-convert) en python.
 ## 📚 Índice
